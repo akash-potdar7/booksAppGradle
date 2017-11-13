@@ -7,13 +7,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication()
-@ComponentScan(basePackages = {"com.akash.booksApp"})
+@ComponentScan(basePackages = { "com.akash.booksApp" })
 @EnableJpaRepositories("com.akash.booksApp.repo")
-@EntityScan(basePackages = {"com.akash.booksApp.entity"})
+@EntityScan(basePackages = { "com.akash.booksApp.entity" })
 public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);	
+		SpringApplication.run(Application.class, args);
 	}
 
 }
