@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.angularSpringBootApp.entity.BookEntity;
-import com.angularSpringBootApp.entity.GenreEntity;
+import com.akash.booksapp.controller.entity.BookEntity;
+import com.akash.booksapp.controller.entity.GenreEntity;
 import com.angularSpringBootApp.model.Book;
 import com.angularSpringBootApp.model.Genre;
 import com.angularSpringBootApp.repo.BookRepository;

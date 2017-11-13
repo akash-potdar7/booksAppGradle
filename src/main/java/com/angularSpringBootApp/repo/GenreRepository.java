@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.angularSpringBootApp.entity.GenreEntity;
+import com.akash.booksapp.controller.entity.GenreEntity;
 
 public interface GenreRepository extends CrudRepository<GenreEntity, Serializable> {
 }
