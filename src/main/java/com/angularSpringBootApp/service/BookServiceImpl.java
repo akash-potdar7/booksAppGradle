@@ -25,10 +25,6 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public Book saveBook(Book book) {
-		System.out.println(book.getGenre().toString());
-		System.out.println(book.getAuthor());
-		System.out.println(book.getName());
-		System.out.println(book.getIsbn());
 		return entityToView(bookRepository.save(viewToEntity(book)));
 	}
 
@@ -37,7 +33,7 @@ public class BookServiceImpl implements BookService {
 		Book book = new Book();
 		book.setIsbn(entity.getIsbn());
 		book.setName(entity.getName());
-		book.setGenre(genreEntityToViewObj(entity.getGenreEntity()));
+		book.setGenreId(entity.getGenreId());
 		book.setAuthor(entity.getAuthor());
 		return book;
 	}
@@ -47,7 +43,7 @@ public class BookServiceImpl implements BookService {
 		BookEntity entity = new BookEntity();
 		entity.setIsbn(book.getIsbn());
 		entity.setName(book.getName());
-		entity.setGenreEntity(genreViewToEntityObj(book.getGenre()));
+		entity.setGenreId(book.getGenreId());
 		entity.setAuthor(book.getAuthor());
 		return entity;
 	}
@@ -78,14 +74,6 @@ public class BookServiceImpl implements BookService {
 		genre.setId(genreEntity.getId());
 		genre.setGenre(genreEntity.getGenre());
 		return genre;
-	}
-
-	// converts Genre View Obj to Entity Obj.
-	private GenreEntity genreViewToEntityObj(Genre genre) {
-		GenreEntity genreEntity = new GenreEntity();
-		genreEntity.setId(genre.getId());
-		genreEntity.setGenre(genre.getGenre());
-		return genreEntity;
 	}
 
 }

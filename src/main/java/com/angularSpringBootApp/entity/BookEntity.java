@@ -27,7 +27,7 @@ public class BookEntity implements Serializable {
 	private String name;
 
 	@Column(name = "GENRE")
-	private GenreEntity genreEntity;
+	private Integer genreId;
 
 	@Column(name = "AUTHOR")
 	private String author;
@@ -47,11 +47,11 @@ public class BookEntity implements Serializable {
 		return name;
 	}
 
-	public BookEntity(Integer isbn, String name, GenreEntity genreEntity, String author) {
+	public BookEntity(Integer isbn, String name, Integer genreId, String author) {
 		super();
 		this.isbn = isbn;
 		this.name = name;
-		this.genreEntity = genreEntity;
+		this.genreId = genreId;
 		this.author = author;
 	}
 
@@ -61,12 +61,12 @@ public class BookEntity implements Serializable {
 
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="genre")
-	public GenreEntity getGenreEntity() {
-		return genreEntity;
+	public Integer getGenreId() {
+		return genreId;
 	}
 
-	public void setGenreEntity(GenreEntity genreEntity) {
-		this.genreEntity = genreEntity;
+	public void setGenreId(Integer genreId) {
+		this.genreId = genreId;
 	}
 
 	public String getAuthor() {
@@ -82,7 +82,7 @@ public class BookEntity implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((author == null) ? 0 : author.hashCode());
-		result = prime * result + ((genreEntity == null) ? 0 : genreEntity.hashCode());
+		result = prime * result + ((genreId == null) ? 0 : genreId.hashCode());
 		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -102,10 +102,10 @@ public class BookEntity implements Serializable {
 				return false;
 		} else if (!author.equals(other.author))
 			return false;
-		if (genreEntity == null) {
-			if (other.genreEntity != null)
+		if (genreId == null) {
+			if (other.genreId != null)
 				return false;
-		} else if (!genreEntity.equals(other.genreEntity))
+		} else if (!genreId.equals(other.genreId))
 			return false;
 		if (isbn == null) {
 			if (other.isbn != null)
@@ -122,7 +122,7 @@ public class BookEntity implements Serializable {
 
 	@Override
 	public String toString() {
-		return "BookEntity [isbn=" + isbn + ", name=" + name + ", genreEntity=" + genreEntity + ", author=" + author
+		return "BookEntity [isbn=" + isbn + ", name=" + name + ", genreId=" + genreId + ", author=" + author
 				+ "]";
 	}
 

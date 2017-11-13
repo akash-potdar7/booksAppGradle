@@ -6,10 +6,19 @@ public class Book {
 	private String name;
 	private Genre genre;
 	private String author;
+	private Integer genreId;
+
+	public Book(Integer isbn, String name, Genre genre, String author, Integer genreId) {
+		super();
+		this.isbn = isbn;
+		this.name = name;
+		this.genre = genre;
+		this.author = author;
+		this.genreId = genreId;
+	}
 
 	public Book(Integer isbn, String name, Genre genre, String author) {
 		super();
-		System.out.println("B2");
 		this.isbn = isbn;
 		this.name = name;
 		this.genre = genre;
@@ -58,6 +67,7 @@ public class Book {
 		int result = 1;
 		result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
+		result = prime * result + ((genreId == null) ? 0 : genreId.hashCode());
 		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -82,6 +92,11 @@ public class Book {
 				return false;
 		} else if (!genre.equals(other.genre))
 			return false;
+		if (genreId == null) {
+			if (other.genreId != null)
+				return false;
+		} else if (!genreId.equals(other.genreId))
+			return false;
 		if (isbn == null) {
 			if (other.isbn != null)
 				return false;
@@ -97,7 +112,16 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [isbn=" + isbn + ", name=" + name + ", genre=" + genre + ", author=" + author + "]";
+		return "Book [isbn=" + isbn + ", name=" + name + ", genre=" + genre + ", author=" + author + ", genreId="
+				+ genreId + "]";
+	}
+
+	public Integer getGenreId() {
+		return genreId;
+	}
+
+	public void setGenreId(Integer genreId) {
+		this.genreId = genreId;
 	}
 
 }

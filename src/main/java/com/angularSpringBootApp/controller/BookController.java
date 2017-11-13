@@ -37,7 +37,7 @@ public class BookController {
 	@RequestMapping(value = "/saveBook", method = RequestMethod.POST)
 	public Book saveBook(@RequestBody Book book) {
 		System.out.println("in saveBook()");
-		System.out.println("book name= " + book.getName());
+		System.out.println("book name= " + book.getGenreId());
 		return bookService.saveBook(book);
 	}
 
