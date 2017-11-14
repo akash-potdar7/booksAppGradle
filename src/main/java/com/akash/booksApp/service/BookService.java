@@ -3,6 +3,7 @@ package com.akash.booksApp.service;
 import java.util.List;
 
 import com.akash.booksApp.model.Book;
+import com.akash.booksApp.model.Genre;
 
 public interface BookService {
 
@@ -10,6 +11,6 @@ public interface BookService {
 
 	List<Book> getAllBooks();
 
-	List getGenreData();
+	List<Genre> getGenreData();
 	
 }

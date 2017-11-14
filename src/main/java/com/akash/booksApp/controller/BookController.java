@@ -19,9 +19,7 @@ public class BookController {
 	@Autowired
 	BookService bookService;
 
-	public BookController() {
-		System.out.println("Hitting");
-	}
+	public BookController() {}
 
 	// To test RequestMapping
 	@RequestMapping("/")
@@ -36,15 +34,12 @@ public class BookController {
 
 	@RequestMapping(value = "/saveBook", method = RequestMethod.POST)
 	public Book saveBook(@RequestBody Book book) {
-		System.out.println("in saveBook()");
-		System.out.println("book name= " + book.getGenreId());
 		return bookService.saveBook(book);
 	}
 
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/getGenreData", method = RequestMethod.GET)
 	public List<Genre> getGenreDropDownData() {
-		System.out.println("in getGenreDropDownData()");
 		return bookService.getGenreData();
 	}
 

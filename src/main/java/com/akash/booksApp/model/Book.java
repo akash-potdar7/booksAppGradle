@@ -26,7 +26,6 @@ public class Book {
 	}
 
 	public Book() {
-		System.out.println("B1");
 	}
 
 	public Integer getIsbn() {

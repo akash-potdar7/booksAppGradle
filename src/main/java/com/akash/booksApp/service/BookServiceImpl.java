@@ -28,7 +28,7 @@ public class BookServiceImpl implements BookService {
 		return entityToView(bookRepository.save(viewToEntity(book)));
 	}
 
-	// Converts Entity Obj to View Obj
+	// Converts Entity Object to View Object
 	private Book entityToView(BookEntity entity) {
 		Book book = new Book();
 		book.setIsbn(entity.getIsbn());
@@ -38,7 +38,7 @@ public class BookServiceImpl implements BookService {
 		return book;
 	}
 
-	// Converts View Obj to Entity Obj
+	// Converts View Object to Entity Object
 	private BookEntity viewToEntity(Book book) {
 		BookEntity entity = new BookEntity();
 		entity.setIsbn(book.getIsbn());
@@ -68,7 +68,7 @@ public class BookServiceImpl implements BookService {
 		return genreList;
 	}
 
-	// converts Genre Entity Obj to View Obj.
+	// converts Genre Entity Object to View Object.
 	private Genre genreEntityToViewObj(GenreEntity genreEntity) {
 		Genre genre = new Genre();
 		genre.setId(genreEntity.getId());

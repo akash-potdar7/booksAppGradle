@@ -6,12 +6,10 @@ public class Genre {
 	private String genre;
 
 	public Genre() {
-		System.out.println("G1");
 	}
-	
+
 	public Genre(int id, String genre) {
 		super();
-		System.out.println("G2");
 		this.id = id;
 		this.genre = genre;
 	}
